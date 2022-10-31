@@ -1,0 +1,30 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+
+
+        <div class="single-news" *ngFor="let anews of newsList">
+
+            <div class="single-news-container">
+
+                <div class="news-small-image"><img src="{{anews.imageUrl}}"></div>
+
+                <div class="news-small-container">
+                    <!-- <div id="news-small-image-phone"><img src="{{anews.imageUrl}}"></div> -->
+                    <div class="news-small-subject">{{anews.subject}}</div>
+                    <div class="news-snippet">{{anews.snippet}}</div>
+                    <div class="news-date">{{anews.createdDatetime}}</div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</body>
