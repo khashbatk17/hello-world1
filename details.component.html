@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="title"> Өгөөж </div>
+
+    <div class="container-total-pnl">
+        <div class="row-title-1">
+            Одоогийн үнэ цэнэ
+            <div class="column-data">{{profitLoss[0]}} </div>
+
+        </div>
+        <div class="row-title-2">
+            24 цагийн ашиг/алдагдал
+            <div class="column-data">{{profitLoss[1]}}</div>
+            <div class="percent-1">3.5%</div>
+        </div>
+        <div class="row-title-3">
+            Нийт Хөрөнгө Оруулалт
+            <div class="column-data">{{profitLoss[2]}}</div>
+        </div>
+        <div class="row-title-4">
+            Хэрэгжээгүй ашиг алдагдал
+            <div class="column-data">{{profitLoss[3]}}</div>
+            <div class="percent-2">-3.5%</div>
+        </div>
+    </div>
+    <div class="container-chart-table">
+        <div class="container-chart">
+            <apx-chart [series]="chartSeries" [chart]="chartDetails"></apx-chart>
+        </div>
+
+        <div class="container-stock-table">
+            <h2>Хувьцааны Хувиарлалт</h2>
+            <div class="Rtable Rtable--3cols">
+                <div class="Rtable-cell">Тикер</div>
+                <div class="Rtable-cell">Үнэлгээ</div>
+                <div class="Rtable-cell">Ашиг</div>
+            </div>
+            <div class="Rtable Rtable--3cols" *ngFor="let element of tickers">
+                <div class="Rtable-cell">{{element.ticker}}</div>
+                <div class="Rtable-cell">{{element.value}}</div>
+                <div class="Rtable-cell">{{element.profitLoss}}</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h2>Зарагдсан Хувьцааны Жагсаалт</h2>
+    <div class="RtableCopied Rtable--3cols" id="Rtable Rtable--3cols-top">
+        <div class="Rtable-cell">Тикер</div>
+        <div class="Rtable-cell">Үнэлгээ</div>
+        <div class="Rtable-cell">Ашиг</div>
+    </div>
+    <div class="RtableCopied Rtable--3cols" *ngFor="let element of tickers">
+        <div class="Rtable-cell">{{element.ticker}}</div>
+        <div class="Rtable-cell">{{element.value}}</div>
+        <div class="Rtable-cell">{{element.profitLoss}}</div>
+    </div>
+
+
+</body>
+
+</html>
